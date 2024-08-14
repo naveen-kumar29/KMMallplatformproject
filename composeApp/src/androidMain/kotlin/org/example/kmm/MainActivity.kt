@@ -11,14 +11,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            LoginScreen()
-//            App()
+//            HomeScreen()
+//            LoginScreen()
+            val navigator = Navigator()
+            App(navigator)
         }
     }
 }
 
+/*
 @Preview
 @Composable
 fun AppAndroidPreview() {
     App()
-}
+}*/

@@ -8,7 +8,9 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         title = "KMM all platform project",
     ) {
-        LoginScreen()
-//        App()
+//        HomeScreen()
+//        LoginScreen()
+        val navigator =Navigator()
+        App(navigator)
     }
 }

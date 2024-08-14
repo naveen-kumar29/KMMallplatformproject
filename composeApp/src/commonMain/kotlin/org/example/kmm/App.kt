@@ -20,19 +20,20 @@ import kmmallplatformproject.composeapp.generated.resources.compose_multiplatfor
 
 @Composable
 @Preview
-fun App() {
+fun App(navigator: Navigator) {
     MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth().fillMaxHeight(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-            Button(onClick = {
-                showContent=true
-//                showContent = !showContent
-            }) {
-                Text("Click me!")
-            }
-            if(showContent) {
-                LoginScreen()
-            }
+        val currentDestination by navigator.currentDestination.collectAsState()
+
+        when (currentDestination) {
+            is NavigationDestination.Home -> HomeScreen(onNavigate = { navigator.navigateTo(it) })
+            is NavigationDestination.Details -> CreateYourProfile (onNavigateBack = { navigator.navigateTo(NavigationDestination.Home) })
+            /*is NavigationDestination.Profile -> {
+                val userId = (currentDestination as NavigationDestination.Profile).userId
+                LoginScreen(userId = userId, onNavigateBack = { navigator.navigateTo(NavigationDestination.Home) })
+            }*/
+            // Add other destinations as needed
+            is NavigationDestination.Profile -> TODO()
+        }
 
             /*AnimatedVisibility(showContent) {
                 val greeting = remember { Greeting().greet() }
@@ -41,6 +42,5 @@ fun App() {
                     Text("Compose: $greeting")
                 }
             }*/
-        }
     }
 }
