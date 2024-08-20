@@ -14,7 +14,8 @@ class MainActivity : ComponentActivity() {
 //            HomeScreen()
 //            LoginScreen()
             val navigator = Navigator()
-            App(navigator)
+//            App(navigator)
+            SampleUI()
         }
     }
 }

@@ -4,5 +4,6 @@ import androidx.compose.ui.window.ComposeUIViewController
 
 fun MainViewController() = ComposeUIViewController {
     val navigator = Navigator()
+//    SampleUI()
     App(navigator)/*LoginScreen()*//*HomeScreen()*/
 }

@@ -8,7 +8,8 @@ import kotlinx.browser.document
 fun main() {
     ComposeViewport(document.body!!) {
         val navigator = Navigator()
-        App(navigator)
+        SampleUI()
+//        App(navigator)
 //        LoginScreen()
 //        HomeScreen()
     }

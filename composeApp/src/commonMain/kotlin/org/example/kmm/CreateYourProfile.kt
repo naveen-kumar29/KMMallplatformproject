@@ -98,8 +98,7 @@ fun BasicDetailContent() {
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
-    val genderNameList = arrayOf("Male", "Female")
-    var text by remember { mutableStateOf(genderNameList[0]) }
+    var text by remember { mutableStateOf("") }
     val isButtonEnabled by remember(firstName, lastName, email, text) {
         derivedStateOf {
             firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && text.isNotEmpty()

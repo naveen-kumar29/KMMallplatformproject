@@ -11,6 +11,7 @@ fun main() = application {
 //        HomeScreen()
 //        LoginScreen()
         val navigator =Navigator()
-        App(navigator)
+//        App(navigator)
+        SampleUI()
     }
 }
